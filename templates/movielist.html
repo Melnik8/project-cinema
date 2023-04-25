@@ -1,0 +1,21 @@
+<div class="border-bottom row" 
+    style="margin-bottom: 20px; padding: 6px;">
+    <div class="col-9">
+        <h3 style="color:rgb(12, 82, 58);
+                    margin-bottom:4px;">
+            {{movie['title']}}
+        </h3>
+        <div>
+            <b>Production:</b> {{movie['production']}} 
+        </div>
+        {% if 'year' in movie %}
+        <div>
+            <b>Year:</b> {{movie['year']}}
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-2">
+        <button type="button" class="btn btn-secondary" disabled>Read</button>
+    </div>
+    
+</div>
