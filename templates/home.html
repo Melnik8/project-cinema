@@ -10,6 +10,7 @@
             #banner {
                 height: auto;
                 width: auto;
+                position: relative;
             }
         </style>
     </head>
@@ -17,14 +18,14 @@
     <body>
         
         
-        {% include 'top_buttons.html' %}
-        
 
+        {% include 'navbar.html' %}
+
+        <img class="img-fluid" id="banner" src="/static/popcorn-unsplash.jpg"
+        width="auto">
         <div class="container" id="container">
-        <h1 class="text-center mt-3 mb-3"> Movie tickets at ChewyMovie in {{theater_location}} </h1>
-        <img class="img-fluid" id="banner" src="\static\popcorn-unsplash.jpg"
-        width="800">
-        <h2 class="text-center mt-2 mb-3">All the movies shown at our theaters in Finland are collected on this website</h2>
+        <h1 class="text-center mt-3 mb-3"> Movie tickets at ChewyMovie in {{theater_location}} </h1> 
+        <h2 class="text-center mt-2 mb-3">All the movies shown at our theaters in Finland are collected on this website </h2>
         <p class="lead">
             Our theaters are equipped with modern screens and comfortable seats. And of course at the cinema kiosk you can find a variety of snacks, including our special popcorn options. We hope you enjoy your time at ChewyMovie. Don't forget to read about our bonus program (link).  
         </p>
@@ -33,10 +34,8 @@
               {% include 'movielist.html' %}
             {% endfor %}
         </p>
-        <p> 
-            {{lol}}
-        </p>
-        <p class="mt-2">Copyright,  2023 Maria</p>
+
+        {% include 'footer.html' %}
         </div>
 
     </body>

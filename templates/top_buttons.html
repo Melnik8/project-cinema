@@ -1,8 +1,22 @@
 <div class="col align-self-start">
 <div class="btn-group" style="float: left; width: 260px; margin-right: 400px ;" role="group" aria-label="Basic example">
 
-    <button type="button" class="btn btn-primary">City</button>
-    <button type="button" class="btn btn-primary">Cinema</button>
+    <button type="button" class="btn btn-primary dropdown-toggle">City</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Helsinki</a></li>
+      <li><a class="dropdown-item" href="#">Espoo</a></li>
+      <li><a class="dropdown-item" href="#">Tampere</a></li>
+      <li><a class="dropdown-item" href="#">Turku</a></li>
+      <li><a class="dropdown-item" href="#">Oulu</a></li>
+    </ul>
+    <button type="button" class="btn btn-primary dropdown-toggle">Cinema</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Helsinki Kamppi</a></li>
+      <li><a class="dropdown-item" href="#">Espoo Iso Omena</a></li>
+      <li><a class="dropdown-item" href="#">Tampere </a></li>
+      <li><a class="dropdown-item" href="#">Turku</a></li>
+      <li><a class="dropdown-item" href="#">Oulu</a></li>
+    </ul>
     <button type="button" class="btn btn-primary">Tickets</button>
 </div>   
 </div>
@@ -19,15 +33,21 @@
 
 
 
-<div class="container" style="float:right;">
-
-    <button type="button" class="btn btn-primary dropdown-toggle float-right align-middle" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="container" style="float:right; width:auto">
+  <div class="row">
+    <button type="button" class="btn btn-primary dropdown-toggle float-right" data-bs-toggle="dropdown" aria-expanded="false">
       Menu
     </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-      <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+    <ul class="dropdown-menu position-relative d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px" data-bs-theme="light">
+      <li><a class="dropdown-item" href="#">About ChewyMovie</a></li>
+      <li><a class="dropdown-item" href="#">About ChewyCorn</a></li>
+      <li><a class="dropdown-item" href="#">Services</a></li>
+      <li><a class="dropdown-item" href="#">Jobs</a></li>
+      <li><a class="dropdown-item" href="#">Contacts</a></li>
     </ul>
-
+  </div>
 </div>
 <br>
+
+
+
