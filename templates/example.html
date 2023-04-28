@@ -16,22 +16,13 @@
     </head>
 
     <body>
+       
 
         {% include 'navbar.html' %}
 
         <img class="img-fluid" id="banner" src="/static/popcorn-unsplash.jpg"
         width="auto">
-        <div class="container" id="container">
-        <h1 class="text-center mt-3 mb-3"> Movie tickets at ChewyMovie in {{theater_location}} </h1> 
-        <h2 class="text-center mt-2 mb-3">All the movies shown at our theaters in Finland are collected on this website </h2>
-        <p class="lead">
-            Our theaters are equipped with modern screens and comfortable seats. And of course at the cinema kiosk you can find a variety of snacks, including our special popcorn options. We hope you enjoy your time at ChewyMovie. Don't forget to read about our bonus program (link).  
-        </p>
-        <p>
-            {% for movie in movies %}
-              {% include 'movielist.html' %}
-            {% endfor %}
-        </p>
+
         <form action="/submit"  method="get">
             <label for="fname">Email:</label><br>
             <input type="text" id="fname" name="fname" value="username"><br>
@@ -39,8 +30,10 @@
             <input type="text" id="lname" name="lname" value="password"><br><br>
             <input type="submit" value="Submit">
         </form> 
+        <a href="/navbar.html"> home </a>
+
         {% include 'footer.html' %}
-        </div>
+   
 
     </body>
 </html>
