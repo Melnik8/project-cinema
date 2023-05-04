@@ -52,10 +52,14 @@ def show_data():
     database = db.get_db()
     
     database.execute(
-        "INSERT INTO user (username, password) VALUES (?, ?)",
-        (request.args['fname'], generate_password_hash(request.args['fname'])),
+        "INSERT INTO schedule (movie_title, date, time, movie_link) VALUES (?, ?, ?, ?)",
+        (request.args['fname'], request.args['date'], request.args['time'], request.args['link'], ),
     )
-    return jsonify({'fname': request.args['fname']})
+    database.commit()
+
+    return render_template('home.html', 
+                          movies=MOVIES,
+                          theater_location='Turku',) 
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
