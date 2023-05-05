@@ -20,7 +20,6 @@ MOVIES = [
     'title': 'Disastrously Hilarious: The Misadventures of a Clumsy Chef',
     'production': 'USA',
     'year': '2023' 
-    
     },
     {
     'id': 3,
