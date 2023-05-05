@@ -17,13 +17,14 @@ MOVIES = [
     },
     {
     'id': 2,
-    'title': 'Frozen Trails of Ottawa',
-    'production': 'USA'
+    'title': 'Disastrously Hilarious: The Misadventures of a Clumsy Chef',
+    'production': 'USA',
+    'year': '2023' 
     
     },
     {
     'id': 3,
-    'title': 'Frozen Trolls in Ottawaland',
+    'title': 'Lunar Koala Adventures',
     'production': 'USA',
     'year': '2022' 
     },
@@ -35,10 +36,17 @@ MOVIES = [
     }
 ]
 
-LOL = [{'lol laugh'}]
+@app.route("/")
+def baton():
+    database = db.get_db()
+    movies = database.execute('select * from movie_description')
+    
+    return render_template('home.html', 
+                          movies=movies)
 
 @app.route("/")
 def hello_masha():
+    
     return render_template('home.html', 
                           movies=MOVIES,
                           theater_location='Turku',) 
@@ -47,13 +55,48 @@ def hello_masha():
 def list_movies():
     return jsonify(MOVIES)
 
-@app.route('/submit', methods=['POST', 'GET'])
+
+# @app.route("/movie/{movie_id}")
+# def 
+
+
+@app.route("/calendar")
+def calendar():
+    calendar_entries = None
+
+    database = db.get_db()
+
+    calendar_entries = database.execute(
+        "SELECT * FROM schedule"
+    )
+
+    return render_template(
+        'calendar.html',
+        calendar_entries=calendar_entries,
+    )
+
+@app.route("/movie_description/<movie_id>")
+def info(movie_id: int):
+    description = None
+
+    database = db.get_db()
+
+    description = database.execute(
+        "SELECT * FROM movie_description WHERE id = ?",
+        (movie_id)
+    )
+    return render_template(
+        'movie_description.html',
+        movie=dict(description.fetchone())
+    )
+
+@app.route('/submit', methods=['POST'])
 def show_data():
     database = db.get_db()
     
     database.execute(
         "INSERT INTO schedule (movie_title, date, time, movie_link) VALUES (?, ?, ?, ?)",
-        (request.args['fname'], request.args['date'], request.args['time'], request.args['link'], ),
+        (request.form['fname'], request.form['date'], request.form['time'], request.form['link']),
     )
     database.commit()
 

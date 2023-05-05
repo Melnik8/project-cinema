@@ -19,8 +19,8 @@
 
         {% include 'navbar.html' %}
 
-        <img class="img-fluid" id="banner" src="/static/popcorn-unsplash.jpg"
-        width="auto">
+        <!-- <img class="img-fluid" id="banner" src="/static/popcorn-unsplash.jpg"
+        width="auto"> -->
         <div class="container" id="container">
         <h1 class="text-center mt-3 mb-3"> Movie tickets at ChewyMovie in {{theater_location}} </h1> 
         <h2 class="text-center mt-2 mb-3">All the movies shown at our theaters in Finland are collected on this website </h2>
@@ -32,18 +32,18 @@
               {% include 'movielist.html' %}
             {% endfor %}
         </p>
-        <form action="/submit"  method="get">
+        <form action="/submit"  method="post">
             <label for="fname">Movie Title:</label><br>
             <input type="text" id="fname" name="fname" value="movie title"><br>
 
             <label for="date">Date:</label><br>
-            <input type="text" id="date" name="date" value="date"><br><br>
+            <input type="date" id="date" name="date" value="date"><br><br>
 
             <label for="time">Time:</label><br>
-            <input type="text" id="time" name="time" value="time"><br><br>
+            <input type="time" id="time" name="time" value="time"><br><br>
 
             <label for="link">Movie Link:</label><br>
-            <input type="text" id="link" name="link" value="link"><br><br>
+            <input type="text" id="link" name="link" value="1"><br><br>
 
             <input type="submit" value="Submit">
         </form> 

@@ -1,0 +1,10 @@
+<table>
+{% for movie in calendar_entries %}
+    <tr>
+        <td>{{movie.movie_title}}</td>
+        <td>{{movie.time}}</td>
+        <td><a href="/movie_description/{{movie.movie_link}}">Link</a></td>
+        <td>{{movie.date}}</td>
+    </tr>
+{% endfor %}
+</table>

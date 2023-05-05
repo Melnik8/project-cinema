@@ -9,6 +9,15 @@ CREATE TABLE schedule (
   movie_link VARCHAR
 );
 
+CREATE table movie_description
+ (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  Year VARCHAR, 
+  Production VARCHAR,
+  Description VARCHAR, 
+  Poster VARCHAR 
+ );
+
 /* CREATE TABLE post (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   author_id INTEGER NOT NULL,
