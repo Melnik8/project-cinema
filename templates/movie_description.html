@@ -1,0 +1,23 @@
+<div class="border-bottom row" 
+    style="margin-bottom: 20px; padding: 6px;">
+    <div class="col-9">
+        <h3 style="color:rgb(12, 82, 58);
+                    margin-bottom:4px;">
+            
+            {{movie.Title}}
+
+        </h3>
+        {% if 'Production' in movie %}
+        <div>
+            <b>Production:</b> {{movie['Production']}} 
+        </div>
+        {% endif %}
+        {% if 'Year' in movie %}
+        <div>
+            <b>Year:</b> {{movie['Year']}}
+        </div>
+    </div>
+        {% endif %}
+        {{movie.Description}} <br>
+        <img src="{{movie['Poster']}}">
+</div>
